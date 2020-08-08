@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车首页</title>
+</head>
+<body>
+    <h1> 欢迎来到购物车首页 </h1>
+    <span>
+    <a th:if="${session.loginUser == null}" href="http://login.booway.com:8080/view/login?target=http://www.booway.com:8082/view/index">登录</a>
+    <a th:unless="${session.loginUser == null}" href="#">退出</a>
+    </span>
+
+    <p th:unless="${session.loginUser == null}">
+        <span th:text="${session.loginUser.userName}"></span>已登录
+    </p>
+</body>
+</html>
